@@ -39,6 +39,7 @@ class TelegramDriver extends HttpDriver
 
     const PAYLOAD_EVENTS = [
         'callback_query',
+        'voice',
     ];
 
     protected $endpoint = 'sendMessage';
