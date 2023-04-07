@@ -142,7 +142,7 @@ class TelegramDriver extends HttpDriver
         }
 
         foreach (self::PAYLOAD_EVENTS as $payloadEvent) {
-            if ($this->payload->has($payloadEvent)) {
+            if ($this->payload->has($payloadEvent) || isset($this->payload->get('message')[$payloadEvent])) {
                 $event = new GenericEvent($this->payload->get($payloadEvent));
                 $event->setName($payloadEvent);
 
